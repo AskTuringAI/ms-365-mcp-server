@@ -745,6 +745,9 @@ When running as an MCP server, the following options can be used:
                   which reads files from those directories.
                   Refused unless --http binds a loopback host with no --public-url and no
                   --trust-proxy-auth
+--forward-pkce    Forward the client's PKCE code_challenge to Microsoft as is instead of using
+                  two-leg PKCE, so /authorize and /token share no in-memory state and can run
+                  on different instances (load balancer, scale to zero). Env: MS365_MCP_FORWARD_PKCE
 --enable-auth-tools Enable login/logout tools when using HTTP mode (disabled by default in HTTP mode)
 --enable-attachment-urls Let get-download-url mint a server-served URL for byte resources Graph
                   exposes no pre-authenticated URL for (see "Server-Minted Attachment URLs").
